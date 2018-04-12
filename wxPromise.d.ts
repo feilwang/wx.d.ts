@@ -1,6 +1,7 @@
-// generate time:2017-08-23 21:12:06 
+// generate time:2018-4-12 06:00:44 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
+// Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
 
 /************************************************
 *                                               *
@@ -411,31 +412,38 @@ declare var Page: PageConstructor;
 declare var wx: {
     // # 网络 # 
     
+    /**
+     * 发起网络请求。使用前请先阅读说明。
+     */
     request(obj: {
         /**
-         * 开发者服务器接口地址
+         * 
          */
         url: string;
         /**
-         * 请求的参数
+         * 
          */
-        data?: any | string;
+        data?: undefined;
         /**
-         * 设置请求的 header , header 中不能设置 Referer
+         * 
          */
         header?: any;
         /**
-         * 默认为 GET，有效值：OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+         * GET
          */
         method?: string;
         /**
-         * 默认为 json。如果设置了 dataType 为 json，则会尝试对响应的数据做一次 JSON.parse
+         * json
          */
         dataType?: string;
+        /**
+         * text
+         */
+        responseType?: string;
     }): Promise<any>;
                     
     /**
-     * 将本地资源上传到开发者服务器。如页面通过 wx.chooseImage 等接口获取到一个本地资源的临时文件路径后，可通过此接口将本地资源上传到指定服务器。客户端发起一个 HTTPS POST 请求，其中 content-type 为 multipart/form-data 。
+     * 将本地资源上传到开发者服务器，客户端发起一个 HTTPS POST 请求，其中 content-type 为 multipart/form-data 。使用前请先阅读说明。
      */
     uploadFile(obj: {
         /**
@@ -451,7 +459,7 @@ declare var wx: {
          */
         name: string;
         /**
-         * HTTP 请求 Header , header 中不能设置 Referer
+         * HTTP 请求 Header, header 中不能设置 Referer
          */
         header?: any;
         /**
@@ -461,7 +469,7 @@ declare var wx: {
     }): Promise<any>;
                     
     /**
-     * 下载文件资源到本地。客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。
+     * 下载文件资源到本地，客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。使用前请先阅读说明。
      */
     downloadFile(obj: {
         /**
@@ -469,13 +477,13 @@ declare var wx: {
          */
         url: string;
         /**
-         * HTTP 请求 Header
+         * HTTP 请求 Header，header 中不能设置 Referer
          */
         header?: any;
     }): Promise<any>;
                     
     /**
-     * 创建一个 WebSocket 连接；一个微信小程序同时只能有一个 WebSocket 连接，如果当前已存在一个 WebSocket 连接，会自动关闭该连接，并重新创建一个 WebSocket 连接。
+     * 创建一个 WebSocket 连接。使用前请先阅读说明。
      */
     connectSocket(obj: {
         /**
@@ -483,15 +491,11 @@ declare var wx: {
          */
         url: string;
         /**
-         * 请求的数据
-         */
-        data?: any;
-        /**
          * HTTP Header , header 中不能设置 Referer
          */
         header?: any;
         /**
-         * 默认是GET，有效值： OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+         * 默认是GET，有效值：OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
          */
         method?: string;
         /**
@@ -526,7 +530,7 @@ declare var wx: {
     onSocketMessage(callback: Function): void;
                     
     /**
-     * 关闭WebSocket连接。
+     * 关闭 WebSocket 连接。
      */
     closeSocket(obj: {
         /**
@@ -608,23 +612,29 @@ declare var wx: {
     }): Promise<any>;
                     
     /**
-     * 开始录音。当主动调用wx.stopRecord，或者录音超过1分钟时自动结束录音，返回录音文件的临时文件路径。当用户离开小程序时，此接口无法调用。
+     * 注意：1.6.0 版本开始，本接口不再维护。建议使用能力更强的 wx.getRecorderManager 接口
      */
     startRecord(): Promise<any>;
                     
     /**
-     * ​    主动调用停止录音。
+     * ​主动调用停止录音。
      */
     stopRecord(): void;
                     
+    getRecorderManager(): Promise<any>;
+                    
     /**
-     * 开始播放语音，同时只允许一个语音文件正在播放，如果前一个语音文件还没播放完，将中断前一个语音播放。
+     * 注意：1.6.0 版本开始，本接口不再维护。建议使用能力更强的 wx.createInnerAudioContext 接口
      */
     playVoice(obj: {
         /**
          * 需要播放的语音文件的文件路径
          */
         filePath: string;
+        /**
+         * 指定录音时长，到达指定的录音时长后会自动停止录音，单位：秒，默认值：60
+         */
+        duration?: number;
     }): Promise<any>;
                     
     /**
@@ -638,7 +648,7 @@ declare var wx: {
     stopVoice(): void;
                     
     /**
-     * 获取后台音乐播放状态。
+     * 注意：1.2.0 版本开始，本接口不再维护。建议使用能力更强的 wx.getBackgroundAudioManager 接口
      */
     getBackgroundAudioPlayerState(): Promise<any>;
                     
@@ -698,9 +708,9 @@ declare var wx: {
     getBackgroundAudioManager(): Promise<any>;
                     
     /**
-     * 创建并返回 audio 上下文 audioContext 对象
+     * 注意：1.6.0 版本开始，本接口不再维护。建议使用能力更强的 wx.createInnerAudioContext 接口
      */
-    createAudioContext(): IAudioContext;
+    createAudioContext(, , ): IAudioContext;
                     
     /**
      * 拍摄视频或从手机相册中选视频，返回视频的临时文件路径。
@@ -711,13 +721,13 @@ declare var wx: {
          */
         sourceType?: string[];
         /**
+         * 是否压缩所选的视频源文件，默认值为true，需要压缩
+         */
+        compressed?: undefined;
+        /**
          * 拍摄视频最长拍摄时间，单位秒。最长支持 60 秒
          */
         maxDuration?: number;
-        /**
-         * 默认调起的为前置还是后置摄像头。front: 前置，back: 后置，默认 back
-         */
-        camera?: string;
     }): Promise<any>;
                     
     saveVideoToPhotosAlbum(obj: {
@@ -728,14 +738,18 @@ declare var wx: {
     }): Promise<any>;
                     
     /**
-     * 创建并返回 video 上下文 videoContext 对象
+     * 创建并返回 video 上下文 videoContext 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 <video/> 组件
      */
-    createVideoContext(): IVideoContext;
+    createVideoContext(, , ): IVideoContext;
+                    
+    createCameraContext(): void;
+                    
+    createLivePlayerContext(, , ): void;
                     
     // # 文件 # 
     
     /**
-     * 保存文件到本地。
+     * 保存文件到本地。注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用
      */
     saveFile(obj: {
         /**
@@ -875,20 +889,19 @@ declare var wx: {
          * 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于wx.openLocation的坐标
          */
         type?: string;
-    }): Promise<any>;
-                    
-    /**
-     * 打开地图选择位置
-     */
-    chooseLocation(obj: {
         /**
-         * 用户取消时调用
+         * 传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度
          */
-        cancel?: Function;
+        altitude?: boolean;
     }): Promise<any>;
                     
     /**
-     * ​    使用微信内置地图查看位置
+     * 打开地图选择位置。
+     */
+    chooseLocation(): Promise<any>;
+                    
+    /**
+     * ​使用微信内置地图查看位置。
      */
     openLocation(obj: {
         /**
@@ -983,6 +996,10 @@ declare var wx: {
          * 是否只能从相机扫码，不允许从相册选择图片
          */
         onlyFromCamera?: boolean;
+        /**
+         * 扫码类型，参数类型是数组，二维码是'qrCode'，一维码是'barCode'，DataMatrix是‘datamatrix’，pdf417是‘pdf417’。
+         */
+        scanType?: Array<any>;
     }): Promise<any>;
                     
     setClipboardData(obj: {
@@ -1068,6 +1085,8 @@ declare var wx: {
         complete?: Function;
     }): void;
                     
+    onBLEConnectionStateChange(callback: Function): void;
+                    
     getBLEDeviceServices(obj: {
         /**
          * 蓝牙设备 id，参考 getDevices 接口
@@ -1115,7 +1134,7 @@ declare var wx: {
          */
         characteristicId: string;
         /**
-         * 蓝牙设备特征值对应的二进制值（注意：vConsole 无法打印出 ArrayBuffer 类型数据）
+         * 蓝牙设备特征值对应的二进制值
          */
         value: undefined;
     }): Promise<any>;
@@ -1138,8 +1157,6 @@ declare var wx: {
          */
         state: boolean;
     }): Promise<any>;
-                    
-    onBLEConnectionStateChange(callback: Function): void;
                     
     onBLECharacteristicValueChange(callback: Function): void;
                     
@@ -1291,6 +1308,56 @@ declare var wx: {
         homeAddressPostalCode?: string;
     }): Promise<any>;
                     
+    getHCEState(): Promise<any>;
+                    
+    startHCE(obj: {
+        /**
+         * 需要注册到系统的 AID 列表，每个 AID 为 String 类型
+         */
+        aid_list: Array<any>;
+    }): Promise<any>;
+                    
+    stopHCE(): void;
+                    
+    onHCEMessage(callback: Function): void;
+                    
+    sendHCEMessage(obj: {
+        /**
+         * 二进制数据
+         */
+        data: undefined;
+    }): Promise<any>;
+                    
+    startWifi(): Promise<any>;
+                    
+    stopWifi(): void;
+                    
+    connectWifi(obj: {
+        /**
+         * Wi-Fi 设备ssid
+         */
+        SSID: string;
+        /**
+         * Wi-Fi 设备bssid
+         */
+        BSSID: string;
+        /**
+         * Wi-Fi 设备密码
+         */
+        password?: string;
+    }): Promise<any>;
+                    
+    getWifiList(): Promise<any>;
+                    
+    onGetWifiList(callback: Function): void;
+                    
+    setWifiList(obj: {
+    }): Promise<any>;
+                    
+    onWifiConnected(callback: Function): void;
+                    
+    getConnectedWifi(): Promise<any>;
+                    
     // # 界面 # 
     
     /**
@@ -1302,7 +1369,7 @@ declare var wx: {
          */
         title: string;
         /**
-         * 图标，有效值 "success", "loading"
+         * 图标，有效值 "success", "loading", "none"
          */
         icon?: string;
         /**
@@ -1412,6 +1479,90 @@ declare var wx: {
      */
     hideNavigationBarLoading(): void;
                     
+    setTabBarBadge(obj: {
+        /**
+         * tabBar的哪一项，从左边算起
+         */
+        index: number;
+        /**
+         * 显示的文本，超过 3 个字符则显示成“…”
+         */
+        text: string;
+    }): Promise<any>;
+                    
+    removeTabBarBadge(obj: {
+        /**
+         * tabBar的哪一项，从左边算起
+         */
+        index: number;
+    }): Promise<any>;
+                    
+    showTabBarRedDot(obj: {
+        /**
+         * tabBar的哪一项，从左边算起
+         */
+        index: number;
+    }): Promise<any>;
+                    
+    hideTabBarRedDot(obj: {
+        /**
+         * tabBar的哪一项，从左边算起
+         */
+        index: number;
+    }): Promise<any>;
+                    
+    setTabBarStyle(obj: {
+        /**
+         * 
+         */
+        color?: undefined;
+        /**
+         * 
+         */
+        selectedColor?: undefined;
+        /**
+         * 
+         */
+        backgroundColor?: undefined;
+        /**
+         * 
+         */
+        borderStyle?: string;
+    }): Promise<any>;
+                    
+    setTabBarItem(obj: {
+        /**
+         * tabBar 的哪一项，从左边算起
+         */
+        index: number;
+        /**
+         * tab 上按钮文字
+         */
+        text?: string;
+        /**
+         * 图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 postion 为 top 时，此参数无效，不支持网络图片
+         */
+        iconPath?: string;
+        /**
+         * 选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 postion 为 top 时，此参数无效
+         */
+        selectedIconPath?: string;
+    }): Promise<any>;
+                    
+    showTabBar(obj: {
+        /**
+         * 是否需要动画效果，默认无
+         */
+        animation?: boolean;
+    }): Promise<any>;
+                    
+    hideTabBar(obj: {
+        /**
+         * 是否需要动画效果，默认无
+         */
+        animation?: boolean;
+    }): Promise<any>;
+                    
     /**
      * 保留当前页面，跳转到应用内的某个页面，使用wx.navigateBack可以返回到原页面。
      */
@@ -1486,6 +1637,10 @@ declare var wx: {
          * 滚动到页面的目标位置（单位px）
          */
         scrollTop: number;
+        /**
+         * 滚动动画的时长，默认300ms，单位 ms
+         */
+        duration?: number;
     }): Promise<any>;
                     
     /**
@@ -1505,8 +1660,6 @@ declare var wx: {
      */
     stopPullDownRefresh(): void;
                     
-    // # WXML节点信息 # 
-    
     // # 第三方平台 # 
     
     getExtConfig(): Promise<any>;
@@ -1516,20 +1669,13 @@ declare var wx: {
     // # 开放接口 # 
     
     /**
-     * 调用接口获取登录凭证（code）进而换取用户登录态信息，包括用户的唯一标识（openid） 及本次登录的 会话密钥（session_key）。用户数据的加解密通讯需要依赖会话密钥完成。
+     * 调用接口wx.login() 获取临时登录凭证（code） 
      */
-    login(): Promise<any>;
-                    
-    /**
-     * 通过上述接口获得的用户登录态拥有一定的时效性。用户越久未使用小程序，用户登录态越有可能失效。反之如果用户一直在使用小程序，则用户登录态一直保持有效。具体时效逻辑由微信维护，对开发者透明。开发者只需要调用wx.checkSession接口检测当前用户登录态是否有效。登录态过期后开发者可以再调用wx.login获取新的用户登录态。
-     */
-    checkSession(): Promise<any>;
-                    
-    authorize(obj: {
+    login(obj: {
         /**
-         * 需要获取权限的scope，详见 scope 列表
+         * 超时时间，单位 ms
          */
-        scope: string;
+        timeout?: number;
     }): Promise<any>;
                     
     /**
@@ -1541,9 +1687,13 @@ declare var wx: {
          */
         withCredentials?: boolean;
         /**
-         * 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文
+         * 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文。默认为en。
          */
         lang?: string;
+        /**
+         * 超时时间，单位 ms
+         */
+        timeout?: number;
     }): Promise<any>;
                     
     /**
@@ -1592,7 +1742,12 @@ declare var wx: {
                     
     getSetting(): Promise<any>;
                     
-    getWeRunData(): Promise<any>;
+    getWeRunData(obj: {
+        /**
+         * 超时时间，单位 ms
+         */
+        timeout?: number;
+    }): Promise<any>;
                     
     navigateToMiniProgram(obj: {
         /**
@@ -1624,11 +1779,13 @@ declare var wx: {
      */
     reportAnalytics(, , ): Promise<any>;
                     
-    // # 拓展接口 # 
+    // # 更新 # 
     
-    arrayBufferToBase64(): Promise<any>;
+    getUpdateManager(): Promise<any>;
                     
-    base64ToArrayBuffer(): Promise<any>;
+    // # 多线程 # 
+    
+    createWorker(): void;
                     
     // # 调试接口 # 
     
