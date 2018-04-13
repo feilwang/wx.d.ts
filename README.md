@@ -36,6 +36,6 @@ chmod u+x everyday.sh
 
 ```bash
 $ crontab -e
-# run at 6:00 AM (14:00 UTC+8) every day.
+# run at 6:00 AM EDT(UTC-4) (18:00 UTC+8) every day.
 0 6 * * * ~/wx.d.ts/everyday.sh
 ```
