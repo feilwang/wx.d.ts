@@ -1,4 +1,4 @@
-// generate time:2018-5-9 06:00:20 
+// generate time:2018-5-10 06:00:21 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -1679,7 +1679,7 @@ declare var wx: {
     }): Promise<any>;
                     
     /**
-     * 获取用户信息，withCredentials 为 true 时需要先调用 wx.login 接口。
+     * 注意：此接口有调整，参考公告 小程序与小游戏获取用户信息接口调整，请开发者注意升级。
      */
     getUserInfo(obj: {
         /**
