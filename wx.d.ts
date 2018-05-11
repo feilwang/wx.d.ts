@@ -1,4 +1,4 @@
-// generate time:2018-5-10 06:00:21 
+// generate time:2018-5-11 06:02:02 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -2777,7 +2777,7 @@ declare var wx: {
     }): void;
                     
     /**
-     * 注意：此接口有调整，参考公告 小程序与小游戏获取用户信息接口调整，请开发者注意升级。
+     * 注意：此接口有调整，使用该接口将不再出现授权弹窗，请使用 <button open-type="getUserInfo"></button> 引导用户主动进行授权操作
      */
     getUserInfo(obj: {
         /**
