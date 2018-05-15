@@ -1,4 +1,4 @@
-// generate time:2018-5-14 06:00:54 
+// generate time:2018-5-15 06:00:49 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -2897,36 +2897,6 @@ declare var wx: {
         complete?: Function;
     }): void;
                     
-    openSetting(obj: {
-        /**
-         * 接口调用成功的回调函数，返回内容详见返回参数说明。
-         */
-        success?: Function;
-        /**
-         * 接口调用失败的回调函数
-         */
-        fail?: Function;
-        /**
-         * 接口调用结束的回调函数（调用成功、失败都会执行）
-         */
-        complete?: Function;
-    }): void;
-                    
-    getSetting(obj: {
-        /**
-         * 接口调用成功的回调函数，返回内容详见返回参数说明。
-         */
-        success?: Function;
-        /**
-         * 接口调用失败的回调函数
-         */
-        fail?: Function;
-        /**
-         * 接口调用结束的回调函数（调用成功、失败都会执行）
-         */
-        complete?: Function;
-    }): void;
-                    
     getWeRunData(obj: {
         /**
          * 超时时间，单位 ms
@@ -3021,6 +2991,10 @@ declare var wx: {
     // # 多线程 # 
     
     createWorker(scriptPath: string): void;
+                    
+    // # 监控 # 
+    
+    reportMonitor(name: string,  value: string, ): void;
                     
     // # 调试接口 # 
     

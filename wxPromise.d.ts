@@ -1,4 +1,4 @@
-// generate time:2018-5-14 06:00:54 
+// generate time:2018-5-15 06:00:49 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -1738,10 +1738,6 @@ declare var wx: {
         cardList: undefined;
     }): Promise<any>;
                     
-    openSetting(): Promise<any>;
-                    
-    getSetting(): Promise<any>;
-                    
     getWeRunData(obj: {
         /**
          * 超时时间，单位 ms
@@ -1786,6 +1782,10 @@ declare var wx: {
     // # 多线程 # 
     
     createWorker(): void;
+                    
+    // # 监控 # 
+    
+    reportMonitor(, , ): Promise<any>;
                     
     // # 调试接口 # 
     
