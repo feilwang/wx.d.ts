@@ -1,4 +1,4 @@
-// generate time:2018-5-16 06:00:37 
+// generate time:2018-5-17 06:00:26 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -1679,7 +1679,7 @@ declare var wx: {
     }): Promise<any>;
                     
     /**
-     * 注意：此接口有调整，使用该接口将不再出现授权弹窗，请使用 &ltbutton open-type="getUserInfo"&gt&lt/button&gt 引导用户主动进行授权操作
+     * 注意：此接口有调整，使用该接口将不再出现授权弹窗，请使用 <button open-type="getUserInfo"></button> 引导用户主动进行授权操作
      */
     getUserInfo(obj: {
         /**
