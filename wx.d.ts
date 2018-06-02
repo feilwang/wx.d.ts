@@ -1,4 +1,4 @@
-// generate time:2018-6-1 06:00:46 
+// generate time:2018-6-2 06:00:37 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -1672,6 +1672,10 @@ declare var wx: {
          * 蓝牙设备 id，参考 getDevices 接口
          */
         deviceId: string;
+        /**
+         * 超时时间，单位ms，不填表示不会超时
+         */
+        timeout?: number;
         /**
          * 成功则返回本机蓝牙适配器状态
          */
