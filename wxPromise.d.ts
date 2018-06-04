@@ -1,4 +1,4 @@
-// generate time:2018-6-3 06:00:28 
+// generate time:2018-6-4 06:00:21 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
