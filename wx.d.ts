@@ -1,4 +1,4 @@
-// generate time:2018-6-11 06:00:30 
+// generate time:2018-6-12 06:00:29 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -1399,6 +1399,10 @@ declare var wx: {
     onAccelerometerChange(callback: Function): void;
                     
     startAccelerometer(obj: {
+        /**
+         * 监听加速度数据回调函数的执行频率
+         */
+        interval?: string;
         /**
          * 接口调用成功的回调函数
          */
