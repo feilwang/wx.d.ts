@@ -1,4 +1,4 @@
-// generate time:2018-6-14 06:00:25 
+// generate time:2018-6-15 06:00:21 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -745,6 +745,21 @@ declare var wx: {
     createCameraContext(): void;
                     
     createLivePlayerContext(, , ): void;
+                    
+    loadFontFace(obj: {
+        /**
+         * 定义的字体名称
+         */
+        family: string;
+        /**
+         * 字体资源的地址
+         */
+        source: string;
+        /**
+         * 可选的字体描述符
+         */
+        desc?: any;
+    }): Promise<any>;
                     
     // # 文件 # 
     
@@ -1572,6 +1587,28 @@ declare var wx: {
         animation?: boolean;
     }): Promise<any>;
                     
+    setBackgroundColor(obj: {
+        /**
+         * 
+         */
+        backgroundColor?: undefined;
+        /**
+         * 
+         */
+        backgroundColorTop?: undefined;
+        /**
+         * 
+         */
+        backgroundColorBottom?: undefined;
+    }): Promise<any>;
+                    
+    setBackgroundTextStyle(obj: {
+        /**
+         * 
+         */
+        textStyle?: string;
+    }): Promise<any>;
+                    
     /**
      * 保留当前页面，跳转到应用内的某个页面，使用wx.navigateBack可以返回到原页面。
      */
@@ -1808,5 +1845,9 @@ declare var wx: {
          */
         enableDebug: boolean;
     }): Promise<any>;
+                    
+    // # 日志 # 
+    
+    getLogManager(): Promise<any>;
                     
 }
