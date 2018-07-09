@@ -1,4 +1,4 @@
-// generate time:2018-7-8 06:00:23 
+// generate time:2018-7-9 06:00:20 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -901,7 +901,7 @@ declare var wx: {
      */
     getLocation(obj: {
         /**
-         * 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于wx.openLocation的坐标
+         * 默认为 wgs84 返回 GPS 坐标；gcj02 返回国测局坐标，可用于wx.openLocation的坐标
          */
         type?: string;
         /**
@@ -920,11 +920,11 @@ declare var wx: {
      */
     openLocation(obj: {
         /**
-         * 纬度，范围为-90~90，负数表示南纬
+         * 纬度，范围为-90~90，负数表示南纬。使用 gcj02 国测局坐标系
          */
         latitude: number;
         /**
-         * 经度，范围为-180~180，负数表示西经
+         * 经度，范围为-180~180，负数表示西经。使用 gcj02 国测局坐标系
          */
         longitude: number;
         /**
