@@ -1,4 +1,4 @@
-// generate time:2018-7-11 06:00:54 
+// generate time:2018-7-12 06:00:27 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -679,7 +679,7 @@ declare var wx: {
     }): void;
                     
     /**
-     * 获取图片信息
+     * 获取图片信息，倘若为网络图片，需先配置download域名才能生效。
      */
     getImageInfo(obj: {
         /**
