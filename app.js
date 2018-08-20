@@ -74,9 +74,10 @@ const getApiList = function(url) {
                     const name = $(li).data('name');
                     let items = [];
                     $(li).children('ul.articles').children('li').each((_, item) => {
+                        let path = $(item).data('path').replace('./','');
                         items.push({
                             name: $(item).data('name'),
-                            url: `${ApiDocUrl}${$(item).data('path')}`
+                            url: `${ApiDocUrl}${path}`
                         })
                     })
                     apiList.push({
