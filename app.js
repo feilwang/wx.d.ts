@@ -193,6 +193,7 @@ const getDefinitions = function(apiList) {
      */`;
                     }
                         dts +=`
+    //@ts-ignore
     ${funcName}(`;
                     api.params.forEach((param, index) => {
                         if (param.type === "OBJECT") {
@@ -276,6 +277,7 @@ const getPromisifiedDefinitions = function(apiList) {
      */`;
                     }
                         dts +=`
+    //@ts-ignore
     ${funcName}(`;
                     let returnType = "void";
                     const promised = isFunctionNeedToBePromisified(funcName);

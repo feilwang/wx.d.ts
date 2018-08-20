@@ -1,4 +1,4 @@
-// generate time:2018-8-20 19:58:28 
+// generate time:2018-8-20 20:17:47 
 // Type definitions for wx app
 // Definitions by: hellopao <https://github.com/hellopao/wx.d.ts>
 // Update by: zxj5470 <https://github.com/zxj5470/wx.d.ts>
@@ -415,6 +415,7 @@ declare var wx: {
     /**
      * 发起网络请求。使用前请先阅读说明。
      */
+    //@ts-ignore
     request(obj: {
         /**
          * 
@@ -445,6 +446,7 @@ declare var wx: {
     /**
      * 将本地资源上传到开发者服务器，客户端发起一个 HTTPS POST 请求，其中 content-type 为 multipart/form-data 。使用前请先阅读说明。
      */
+    //@ts-ignore
     uploadFile(obj: {
         /**
          * 开发者服务器 url
@@ -471,6 +473,7 @@ declare var wx: {
     /**
      * 下载文件资源到本地，客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。使用前请先阅读说明。
      */
+    //@ts-ignore
     downloadFile(obj: {
         /**
          * 下载资源的 url
@@ -485,6 +488,7 @@ declare var wx: {
     /**
      * 创建一个 WebSocket 连接。使用前请先阅读说明。
      */
+    //@ts-ignore
     connectSocket(obj: {
         /**
          * 开发者服务器接口地址，必须是 wss 协议，且域名必须是后台配置的合法域名
@@ -503,16 +507,19 @@ declare var wx: {
     /**
      * 监听WebSocket连接打开事件。
      */
+    //@ts-ignore
     onSocketOpen(callback: Function): void;
                     
     /**
      * 监听WebSocket错误。
      */
+    //@ts-ignore
     onSocketError(callback: Function): void;
                     
     /**
      * 通过 WebSocket 连接发送数据，需要先 wx.connectSocket，并在 wx.onSocketOpen 回调之后才能发送。
      */
+    //@ts-ignore
     sendSocketMessage(obj: {
         /**
          * 需要发送的内容
@@ -523,11 +530,13 @@ declare var wx: {
     /**
      * 监听WebSocket接受到服务器的消息事件。
      */
+    //@ts-ignore
     onSocketMessage(callback: Function): void;
                     
     /**
      * 关闭 WebSocket 连接。
      */
+    //@ts-ignore
     closeSocket(obj: {
         /**
          * 一个数字值表示关闭连接的状态号，表示连接被关闭的原因。如果这个参数没有被指定，默认的取值是1000 （表示正常连接关闭）
@@ -554,6 +563,7 @@ declare var wx: {
     /**
      * 监听WebSocket关闭。
      */
+    //@ts-ignore
     onSocketClose(callback: Function): void;
                     
     // # 媒体 # 
@@ -561,6 +571,7 @@ declare var wx: {
     /**
      * 从本地相册选择图片或使用相机拍照。
      */
+    //@ts-ignore
     chooseImage(obj: {
         /**
          * 最多可以选择的图片张数，默认9
@@ -579,6 +590,7 @@ declare var wx: {
     /**
      * 预览图片。支持云文件ID（2.2.3）
      */
+    //@ts-ignore
     previewImage(obj: {
         /**
          * 当前显示图片的链接，不填则默认为 urls 的第一张
@@ -593,6 +605,7 @@ declare var wx: {
     /**
      * 获取图片信息，倘若为网络图片，需先配置download域名才能生效。
      */
+    //@ts-ignore
     getImageInfo(obj: {
         /**
          * 图片的路径，可以是相对路径，临时文件路径，存储文件路径，网络图片路径
@@ -600,6 +613,7 @@ declare var wx: {
         src: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     saveImageToPhotosAlbum(obj: {
         /**
          * 图片文件路径，可以是临时文件路径也可以是永久文件路径，不支持网络图片路径
@@ -610,18 +624,22 @@ declare var wx: {
     /**
      * 注意：1.6.0 版本开始，本接口不再维护。建议使用能力更强的 wx.getRecorderManager 接口
      */
+    //@ts-ignore
     startRecord(): Promise<any>;
                     
     /**
      * ​主动调用停止录音。
      */
+    //@ts-ignore
     stopRecord(): void;
                     
+    //@ts-ignore
     getRecorderManager(): Promise<any>;
                     
     /**
      * 注意：1.6.0 版本开始，本接口不再维护。建议使用能力更强的 wx.createInnerAudioContext 接口
      */
+    //@ts-ignore
     playVoice(obj: {
         /**
          * 需要播放的语音文件的文件路径
@@ -636,21 +654,25 @@ declare var wx: {
     /**
      * 暂停正在播放的语音。再次调用wx.playVoice播放同一个文件时，会从暂停处开始播放。如果想从头开始播放，需要先调用 wx.stopVoice。
      */
+    //@ts-ignore
     pauseVoice(): void;
                     
     /**
      * 结束播放语音。
      */
+    //@ts-ignore
     stopVoice(): void;
                     
     /**
      * 注意：1.2.0 版本开始，本接口不再维护。建议使用能力更强的 wx.getBackgroundAudioManager 接口
      */
+    //@ts-ignore
     getBackgroundAudioPlayerState(): Promise<any>;
                     
     /**
      * 使用后台播放器播放音乐，对于微信客户端来说，只能同时有一个后台音乐在播放。当用户离开小程序后，音乐将暂停播放；当用户在其他小程序占用了音乐播放器，原有小程序内的音乐将停止播放。
      */
+    //@ts-ignore
     playBackgroundAudio(obj: {
         /**
          * 音乐链接，目前支持的格式有 m4a, aac, mp3, wav
@@ -669,11 +691,13 @@ declare var wx: {
     /**
      * 暂停播放音乐。
      */
+    //@ts-ignore
     pauseBackgroundAudio(): void;
                     
     /**
      * 控制音乐播放进度。
      */
+    //@ts-ignore
     seekBackgroundAudio(obj: {
         /**
          * 音乐位置，单位：秒
@@ -684,33 +708,40 @@ declare var wx: {
     /**
      * 停止播放音乐。
      */
+    //@ts-ignore
     stopBackgroundAudio(): void;
                     
     /**
      * 监听音乐播放。
      */
+    //@ts-ignore
     onBackgroundAudioPlay(callback: Function): void;
                     
     /**
      * 监听音乐暂停。
      */
+    //@ts-ignore
     onBackgroundAudioPause(callback: Function): void;
                     
     /**
      * 监听音乐停止。
      */
+    //@ts-ignore
     onBackgroundAudioStop(callback: Function): void;
                     
+    //@ts-ignore
     getBackgroundAudioManager(): Promise<any>;
                     
     /**
      * 注意：1.6.0 版本开始，本接口不再维护。建议使用能力更强的 wx.createInnerAudioContext 接口
      */
+    //@ts-ignore
     createAudioContext(, , ): IAudioContext;
                     
     /**
      * 拍摄视频或从手机相册中选视频，返回视频的临时文件路径。
      */
+    //@ts-ignore
     chooseVideo(obj: {
         /**
          * album 从相册选视频，camera 使用相机拍摄，默认为：['album', 'camera']
@@ -726,6 +757,7 @@ declare var wx: {
         maxDuration?: number;
     }): Promise<any>;
                     
+    //@ts-ignore
     saveVideoToPhotosAlbum(obj: {
         /**
          * 视频文件路径，可以是临时文件路径也可以是永久文件路径
@@ -736,12 +768,16 @@ declare var wx: {
     /**
      * 创建并返回 video 上下文 videoContext 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 <video/> 组件
      */
+    //@ts-ignore
     createVideoContext(, , ): IVideoContext;
                     
+    //@ts-ignore
     createCameraContext(): void;
                     
+    //@ts-ignore
     createLivePlayerContext(, , ): void;
                     
+    //@ts-ignore
     loadFontFace(obj: {
         /**
          * 定义的字体名称
@@ -762,6 +798,7 @@ declare var wx: {
     /**
      * 保存文件到本地。注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用
      */
+    //@ts-ignore
     saveFile(obj: {
         /**
          * 需要保存的文件的临时路径
@@ -772,11 +809,13 @@ declare var wx: {
     /**
      * 获取本地已保存的文件列表
      */
+    //@ts-ignore
     getSavedFileList(): Promise<any>;
                     
     /**
      * 获取本地文件的文件信息。此接口只能用于获取已保存到本地的文件，若需要获取临时文件信息，请使用 wx.getFileInfo 接口。
      */
+    //@ts-ignore
     getSavedFileInfo(obj: {
         /**
          * 文件路径
@@ -787,6 +826,7 @@ declare var wx: {
     /**
      * 删除本地存储的文件
      */
+    //@ts-ignore
     removeSavedFile(obj: {
         /**
          * 需要删除的文件路径
@@ -797,6 +837,7 @@ declare var wx: {
     /**
      * 新开页面打开文档，支持格式：doc, xls, ppt, pdf, docx, xlsx, pptx
      */
+    //@ts-ignore
     openDocument(obj: {
         /**
          * 文件路径，可通过 downFile 获得
@@ -808,6 +849,7 @@ declare var wx: {
         fileType?: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     getFileInfo(obj: {
         /**
          * 本地文件路径
@@ -824,6 +866,7 @@ declare var wx: {
     /**
      * 将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个异步接口。
      */
+    //@ts-ignore
     setStorage(obj: {
         /**
          * 本地缓存中的指定的 key
@@ -838,11 +881,13 @@ declare var wx: {
     /**
      * 将 data 存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个同步接口。
      */
+    //@ts-ignore
     setStorageSync(key: string, data: any, ): void;
                     
     /**
      * 从本地缓存中异步获取指定 key 对应的内容。
      */
+    //@ts-ignore
     getStorage(obj: {
         /**
          * 本地缓存中的指定的 key
@@ -853,21 +898,25 @@ declare var wx: {
     /**
      * 从本地缓存中同步获取指定 key 对应的内容。
      */
+    //@ts-ignore
     getStorageSync(key: string): void;
                     
     /**
      * 异步获取当前storage的相关信息
      */
+    //@ts-ignore
     getStorageInfo(): Promise<any>;
                     
     /**
      * 同步获取当前storage的相关信息
      */
+    //@ts-ignore
     getStorageInfoSync(): void;
                     
     /**
      * 从本地缓存中异步移除指定 key 。
      */
+    //@ts-ignore
     removeStorage(obj: {
         /**
          * 本地缓存中的指定的 key
@@ -878,16 +927,19 @@ declare var wx: {
     /**
      * 从本地缓存中同步移除指定 key 。
      */
+    //@ts-ignore
     removeStorageSync(key: string): void;
                     
     /**
      * 清理本地数据缓存。
      */
+    //@ts-ignore
     clearStorage(): void;
                     
     /**
      * 同步清理本地数据缓存
      */
+    //@ts-ignore
     clearStorageSync(): void;
                     
     // # 位置 # 
@@ -895,6 +947,7 @@ declare var wx: {
     /**
      * 获取当前的地理位置、速度。当用户离开小程序后，此接口无法调用
      */
+    //@ts-ignore
     getLocation(obj: {
         /**
          * 默认为 wgs84 返回 GPS 坐标；gcj02 返回国测局坐标，可用于wx.openLocation的坐标
@@ -909,11 +962,13 @@ declare var wx: {
     /**
      * 打开地图选择位置。
      */
+    //@ts-ignore
     chooseLocation(): Promise<any>;
                     
     /**
      * ​使用微信内置地图查看位置。
      */
+    //@ts-ignore
     openLocation(obj: {
         /**
          * 纬度，范围为-90~90，负数表示南纬。使用 gcj02 国测局坐标系
@@ -940,6 +995,7 @@ declare var wx: {
     /**
      * 创建并返回 map 上下文 mapContext 对象
      */
+    //@ts-ignore
     createMapContext(): void;
                     
     // # 设备 # 
@@ -947,22 +1003,28 @@ declare var wx: {
     /**
      * 获取系统信息。
      */
+    //@ts-ignore
     getSystemInfo(): Promise<any>;
                     
     /**
      * 获取系统信息同步接口
      */
+    //@ts-ignore
     getSystemInfoSync(): void;
                     
+    //@ts-ignore
     onMemoryWarning(): void;
                     
     /**
      * 获取网络类型。
      */
+    //@ts-ignore
     getNetworkType(): Promise<any>;
                     
+    //@ts-ignore
     onNetworkStatusChange(callback: Function): void;
                     
+    //@ts-ignore
     setScreenBrightness(obj: {
         /**
          * 屏幕亮度值，范围 0~1，0 最暗，1 最亮
@@ -970,17 +1032,22 @@ declare var wx: {
         value: number;
     }): Promise<any>;
                     
+    //@ts-ignore
     getScreenBrightness(): Promise<any>;
                     
+    //@ts-ignore
     vibrateLong(): Promise<any>;
                     
+    //@ts-ignore
     vibrateShort(): Promise<any>;
                     
     /**
      * 监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 wx.stopAccelerometer 停止监听。
      */
+    //@ts-ignore
     onAccelerometerChange(callback: Function): void;
                     
+    //@ts-ignore
     startAccelerometer(obj: {
         /**
          * 监听加速度数据回调函数的执行频率
@@ -988,17 +1055,22 @@ declare var wx: {
         interval?: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     stopAccelerometer(): void;
                     
     /**
      * 监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用wx.stopCompass停止监听。
      */
+    //@ts-ignore
     onCompassChange(callback: Function): void;
                     
+    //@ts-ignore
     startCompass(): Promise<any>;
                     
+    //@ts-ignore
     stopCompass(): void;
                     
+    //@ts-ignore
     makePhoneCall(obj: {
         /**
          * 需要拨打的电话号码
@@ -1009,6 +1081,7 @@ declare var wx: {
     /**
      * 调起客户端扫码界面，扫码成功后返回对应的结果
      */
+    //@ts-ignore
     scanCode(obj: {
         /**
          * 是否只能从相机扫码，不允许从相册选择图片
@@ -1020,6 +1093,7 @@ declare var wx: {
         scanType?: Array<any>;
     }): Promise<any>;
                     
+    //@ts-ignore
     setClipboardData(obj: {
         /**
          * 需要设置的内容
@@ -1027,16 +1101,22 @@ declare var wx: {
         data: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     getClipboardData(): Promise<any>;
                     
+    //@ts-ignore
     openBluetoothAdapter(): Promise<any>;
                     
+    //@ts-ignore
     closeBluetoothAdapter(): void;
                     
+    //@ts-ignore
     getBluetoothAdapterState(): Promise<any>;
                     
+    //@ts-ignore
     onBluetoothAdapterStateChange(callback: Function): void;
                     
+    //@ts-ignore
     startBluetoothDevicesDiscovery(obj: {
         /**
          * 蓝牙设备主 service 的 uuid 列表
@@ -1052,12 +1132,16 @@ declare var wx: {
         interval?: number;
     }): Promise<any>;
                     
+    //@ts-ignore
     stopBluetoothDevicesDiscovery(): void;
                     
+    //@ts-ignore
     getBluetoothDevices(): Promise<any>;
                     
+    //@ts-ignore
     onBluetoothDeviceFound(callback: Function): void;
                     
+    //@ts-ignore
     getConnectedBluetoothDevices(obj: {
         /**
          * 蓝牙设备主 service 的 uuid 列表
@@ -1065,6 +1149,7 @@ declare var wx: {
         services: Array<any>;
     }): Promise<any>;
                     
+    //@ts-ignore
     createBLEConnection(obj: {
         /**
          * 蓝牙设备 id，参考 getDevices 接口
@@ -1088,6 +1173,7 @@ declare var wx: {
         complete?: Function;
     }): void;
                     
+    //@ts-ignore
     closeBLEConnection(obj: {
         /**
          * 蓝牙设备 id，参考 getDevices 接口
@@ -1107,8 +1193,10 @@ declare var wx: {
         complete?: Function;
     }): void;
                     
+    //@ts-ignore
     onBLEConnectionStateChange(callback: Function): void;
                     
+    //@ts-ignore
     getBLEDeviceServices(obj: {
         /**
          * 蓝牙设备 id，参考 getDevices 接口
@@ -1116,6 +1204,7 @@ declare var wx: {
         deviceId: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     getBLEDeviceCharacteristics(obj: {
         /**
          * 蓝牙设备 id，参考 device 对象
@@ -1127,6 +1216,7 @@ declare var wx: {
         serviceId: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     readBLECharacteristicValue(obj: {
         /**
          * 蓝牙设备 id，参考 device 对象
@@ -1142,6 +1232,7 @@ declare var wx: {
         characteristicId: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     writeBLECharacteristicValue(obj: {
         /**
          * 蓝牙设备 id，参考 device 对象
@@ -1161,6 +1252,7 @@ declare var wx: {
         value: undefined;
     }): Promise<any>;
                     
+    //@ts-ignore
     notifyBLECharacteristicValueChange(obj: {
         /**
          * 蓝牙设备 id，参考 device 对象
@@ -1180,8 +1272,10 @@ declare var wx: {
         state: boolean;
     }): Promise<any>;
                     
+    //@ts-ignore
     onBLECharacteristicValueChange(callback: Function): void;
                     
+    //@ts-ignore
     startBeaconDiscovery(obj: {
         /**
          * iBeacon设备广播的 uuids
@@ -1189,16 +1283,22 @@ declare var wx: {
         uuids: string[];
     }): Promise<any>;
                     
+    //@ts-ignore
     stopBeaconDiscovery(): void;
                     
+    //@ts-ignore
     getBeacons(): Promise<any>;
                     
+    //@ts-ignore
     onBeaconUpdate(callback: Function): void;
                     
+    //@ts-ignore
     onBeaconServiceChange(callback: Function): void;
                     
+    //@ts-ignore
     onUserCaptureScreen(callback: Function): void;
                     
+    //@ts-ignore
     addPhoneContact(obj: {
         /**
          * 头像本地文件路径
@@ -1330,8 +1430,10 @@ declare var wx: {
         homeAddressPostalCode?: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     getHCEState(): Promise<any>;
                     
+    //@ts-ignore
     startHCE(obj: {
         /**
          * 需要注册到系统的 AID 列表，每个 AID 为 String 类型
@@ -1339,10 +1441,13 @@ declare var wx: {
         aid_list: Array<any>;
     }): Promise<any>;
                     
+    //@ts-ignore
     stopHCE(): void;
                     
+    //@ts-ignore
     onHCEMessage(callback: Function): void;
                     
+    //@ts-ignore
     sendHCEMessage(obj: {
         /**
          * 二进制数据
@@ -1350,10 +1455,13 @@ declare var wx: {
         data: undefined;
     }): Promise<any>;
                     
+    //@ts-ignore
     startWifi(): Promise<any>;
                     
+    //@ts-ignore
     stopWifi(): void;
                     
+    //@ts-ignore
     connectWifi(obj: {
         /**
          * Wi-Fi 设备ssid
@@ -1369,15 +1477,20 @@ declare var wx: {
         password?: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     getWifiList(): Promise<any>;
                     
+    //@ts-ignore
     onGetWifiList(callback: Function): void;
                     
+    //@ts-ignore
     setWifiList(obj: {
     }): Promise<any>;
                     
+    //@ts-ignore
     onWifiConnected(callback: Function): void;
                     
+    //@ts-ignore
     getConnectedWifi(): Promise<any>;
                     
     // # 界面 # 
@@ -1385,6 +1498,7 @@ declare var wx: {
     /**
      * 显示消息提示框
      */
+    //@ts-ignore
     showToast(obj: {
         /**
          * 提示的内容
@@ -1408,6 +1522,7 @@ declare var wx: {
         mask?: boolean;
     }): Promise<any>;
                     
+    //@ts-ignore
     showLoading(obj: {
         /**
          * 提示的内容
@@ -1422,13 +1537,16 @@ declare var wx: {
     /**
      * 隐藏消息提示框
      */
+    //@ts-ignore
     hideToast(): void;
                     
+    //@ts-ignore
     hideLoading(): Promise<any>;
                     
     /**
      * ​显示模态弹窗
      */
+    //@ts-ignore
     showModal(obj: {
         /**
          * 提示的标题
@@ -1463,6 +1581,7 @@ declare var wx: {
     /**
      * ​显示操作菜单
      */
+    //@ts-ignore
     showActionSheet(obj: {
         /**
          * 按钮的文字数组，数组长度最大为6个
@@ -1477,6 +1596,7 @@ declare var wx: {
     /**
      * 动态设置当前页面的标题。
      */
+    //@ts-ignore
     setNavigationBarTitle(obj: {
         /**
          * 页面标题
@@ -1487,13 +1607,16 @@ declare var wx: {
     /**
      * 在当前页面显示导航条加载动画。
      */
+    //@ts-ignore
     showNavigationBarLoading(): void;
                     
     /**
      * 隐藏导航条加载动画。
      */
+    //@ts-ignore
     hideNavigationBarLoading(): void;
                     
+    //@ts-ignore
     setTabBarBadge(obj: {
         /**
          * tabBar的哪一项，从左边算起
@@ -1505,6 +1628,7 @@ declare var wx: {
         text: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     removeTabBarBadge(obj: {
         /**
          * tabBar的哪一项，从左边算起
@@ -1512,6 +1636,7 @@ declare var wx: {
         index: number;
     }): Promise<any>;
                     
+    //@ts-ignore
     showTabBarRedDot(obj: {
         /**
          * tabBar的哪一项，从左边算起
@@ -1519,6 +1644,7 @@ declare var wx: {
         index: number;
     }): Promise<any>;
                     
+    //@ts-ignore
     hideTabBarRedDot(obj: {
         /**
          * tabBar的哪一项，从左边算起
@@ -1526,6 +1652,7 @@ declare var wx: {
         index: number;
     }): Promise<any>;
                     
+    //@ts-ignore
     setTabBarStyle(obj: {
         /**
          * 
@@ -1545,6 +1672,7 @@ declare var wx: {
         borderStyle?: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     setTabBarItem(obj: {
         /**
          * tabBar 的哪一项，从左边算起
@@ -1564,6 +1692,7 @@ declare var wx: {
         selectedIconPath?: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     showTabBar(obj: {
         /**
          * 是否需要动画效果，默认无
@@ -1571,6 +1700,7 @@ declare var wx: {
         animation?: boolean;
     }): Promise<any>;
                     
+    //@ts-ignore
     hideTabBar(obj: {
         /**
          * 是否需要动画效果，默认无
@@ -1578,6 +1708,7 @@ declare var wx: {
         animation?: boolean;
     }): Promise<any>;
                     
+    //@ts-ignore
     setBackgroundColor(obj: {
         /**
          * 
@@ -1593,6 +1724,7 @@ declare var wx: {
         backgroundColorBottom?: undefined;
     }): Promise<any>;
                     
+    //@ts-ignore
     setBackgroundTextStyle(obj: {
         /**
          * 
@@ -1600,6 +1732,7 @@ declare var wx: {
         textStyle?: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     setTopBarText(obj: {
         /**
          * 置顶栏文字内容
@@ -1610,6 +1743,7 @@ declare var wx: {
     /**
      * 保留当前页面，跳转到应用内的某个页面，使用wx.navigateBack可以返回到原页面。
      */
+    //@ts-ignore
     navigateTo(obj: {
         /**
          * 需要跳转的应用内非 tabBar 的页面的路径 , 路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'
@@ -1620,6 +1754,7 @@ declare var wx: {
     /**
      * 关闭当前页面，跳转到应用内的某个页面。
      */
+    //@ts-ignore
     redirectTo(obj: {
         /**
          * 需要跳转的应用内非 tabBar 的页面的路径，路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'
@@ -1627,6 +1762,7 @@ declare var wx: {
         url: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     reLaunch(obj: {
         /**
          * 需要跳转的应用内页面路径 , 路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'，如果跳转的页面路径是 tabBar 页面则不能带参数
@@ -1637,6 +1773,7 @@ declare var wx: {
     /**
      * 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
      */
+    //@ts-ignore
     switchTab(obj: {
         /**
          * 需要跳转的 tabBar 页面的路径（需在 app.json 的 tabBar 字段定义的页面），路径后不能带参数
@@ -1647,6 +1784,7 @@ declare var wx: {
     /**
      * 关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages() 获取当前的页面栈，决定需要返回几层。
      */
+    //@ts-ignore
     navigateBack(obj: {
         /**
          * 返回的页面数，如果 delta 大于现有页面数，则返回到首页。
@@ -1657,6 +1795,7 @@ declare var wx: {
     /**
      * 创建一个动画实例animation。调用实例的方法来描述动画。最后通过动画实例的export方法导出动画数据传递给组件的animation属性。
      */
+    //@ts-ignore
     createAnimation(obj: {
         /**
          * 400
@@ -1676,6 +1815,7 @@ declare var wx: {
         transformOrigin?: string;
     }): IAnimation;
                     
+    //@ts-ignore
     pageScrollTo(obj: {
         /**
          * 滚动到页面的目标位置（单位px）
@@ -1690,24 +1830,30 @@ declare var wx: {
     /**
      * 创建 canvas 绘图上下文（指定 canvasId）.Tip: 需要指定 canvasId，该绘图上下文只作用于对应的 <canvas/>
      */
+    //@ts-ignore
     createCanvasContext(): ICanvasContext;
                     
     /**
      * 把当前画布的内容导出生成图片，并返回文件路径
      */
+    //@ts-ignore
     canvasToTempFilePath(): void;
                     
+    //@ts-ignore
     startPullDownRefresh(): Promise<any>;
                     
     /**
      * 停止当前页面下拉刷新。
      */
+    //@ts-ignore
     stopPullDownRefresh(): void;
                     
     // # 第三方平台 # 
     
+    //@ts-ignore
     getExtConfig(): Promise<any>;
                     
+    //@ts-ignore
     getExtConfigSync(): void;
                     
     // # 开放接口 # 
@@ -1715,6 +1861,7 @@ declare var wx: {
     /**
      * 调用接口wx.login() 获取临时登录凭证（code）
      */
+    //@ts-ignore
     login(obj: {
         /**
          * 超时时间，单位 ms
@@ -1725,6 +1872,7 @@ declare var wx: {
     /**
      * 注意：此接口有调整，使用该接口将不再出现授权弹窗，请使用 <button open-type="getUserInfo"></button> 引导用户主动进行授权操作
      */
+    //@ts-ignore
     getUserInfo(obj: {
         /**
          * 是否带上登录态信息
@@ -1743,6 +1891,7 @@ declare var wx: {
     /**
      * 发起微信支付。
      */
+    //@ts-ignore
     requestPayment(obj: {
         /**
          * 时间戳从1970年1月1日00:00:00至今的秒数,即当前的时间
@@ -1766,8 +1915,10 @@ declare var wx: {
         paySign: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     chooseAddress(): Promise<any>;
                     
+    //@ts-ignore
     addCard(obj: {
         /**
          * 需要添加的卡券列表，列表内对象说明请参见请求对象说明
@@ -1775,6 +1926,7 @@ declare var wx: {
         cardList: undefined;
     }): Promise<any>;
                     
+    //@ts-ignore
     openCard(obj: {
         /**
          * 需要打开的卡券列表，列表内参数详见openCard 请求对象说明
@@ -1782,11 +1934,14 @@ declare var wx: {
         cardList: undefined;
     }): Promise<any>;
                     
+    //@ts-ignore
     openSetting(obj: {
     }): Promise<any>;
                     
+    //@ts-ignore
     getSetting(): Promise<any>;
                     
+    //@ts-ignore
     getWeRunData(obj: {
         /**
          * 超时时间，单位 ms
@@ -1794,8 +1949,10 @@ declare var wx: {
         timeout?: number;
     }): Promise<any>;
                     
+    //@ts-ignore
     getAccountInfoSync(): void;
                     
+    //@ts-ignore
     navigateToMiniProgram(obj: {
         /**
          * 要打开的小程序 appId
@@ -1815,8 +1972,10 @@ declare var wx: {
         envVersion?: string;
     }): Promise<any>;
                     
+    //@ts-ignore
     chooseInvoiceTitle(): Promise<any>;
                     
+    //@ts-ignore
     checkIsSupportSoterAuthentication(): Promise<any>;
                     
     // # 数据 # 
@@ -1824,22 +1983,27 @@ declare var wx: {
     /**
      * 自定义分析数据上报接口。使用前，需要在小程序管理后台自定义分析中新建事件，配置好事件名与字段。
      */
+    //@ts-ignore
     reportAnalytics(, , ): Promise<any>;
                     
     // # 更新 # 
     
+    //@ts-ignore
     getUpdateManager(): Promise<any>;
                     
     // # 多线程 # 
     
+    //@ts-ignore
     createWorker(): void;
                     
     // # 监控 # 
     
+    //@ts-ignore
     reportMonitor(, , ): Promise<any>;
                     
     // # 调试接口 # 
     
+    //@ts-ignore
     setEnableDebug(obj: {
         /**
          * 是否打开调试
@@ -1849,6 +2013,7 @@ declare var wx: {
                     
     // # 日志 # 
     
+    //@ts-ignore
     getLogManager(): Promise<any>;
                     
     // # undefined # 
